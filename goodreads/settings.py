@@ -7,6 +7,7 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,9 +22,11 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
+
 ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = "users:login"
+
 
 # Application definition
 
@@ -41,7 +44,7 @@ INSTALLED_APPS = [
 
     'books',
     'users',
-    'api'
+    'api',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -72,6 +75,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Наш контекстный процессор
+                'goodreads.context_processors.get',
+
             ],
         },
     },
@@ -139,6 +145,13 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = 'static-files'
 
+
+
+
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -158,3 +171,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 2
 }
+
+

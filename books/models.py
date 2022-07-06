@@ -29,6 +29,10 @@ class Author(models.Model):
 class BookAuthor(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    # ++
+    # author_picture = models.ImageField(default="author_picture.jpg")
+
+
 
     def __str__(self):
         return f"{self.book.title} by {self.author.first_name} {self.author.last_name}"

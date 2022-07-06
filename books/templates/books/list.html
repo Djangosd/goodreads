@@ -3,31 +3,70 @@
 {% block title %}Books Page{% endblock %}
 
 {% block content %}
-    <h1>Books</h1>
 
-    <div class="row mb-3">
-        <div class="col-4">
-            <form class="d-flex" method="get">
-                <input class="form-control me-2" type="text" placeholder="Search" name="q" value="{{ search_query }}">
+    <br><br>
+    <h1>Sevimli Kitoblar</h1>
 
-                <button class="btn btn-success">Search</button>
-            </form>
+<!--    <div class="row mb-3">-->
+<!--        <div class="col-4">-->
+<!--            <form class="d-flex" method="get">-->
+<!--                <input class="form-control me-2" type="text" placeholder="Search" name="q" value="{{ search_query }}">-->
 
-        </div>
+<!--                <button class="btn btn-success">Search</button>-->
+<!--            </form>-->
 
-    </div>
+<!--        </div>-->
 
+<!--    </div>-->
 
     {% if page_obj %}
             {% for book in page_obj.object_list %}
                 <div class="row mb-4">
-                    <div class="col-2">
+                    <div class="col-3">
                         <img class="cover-pic" src="{{ book.cover_picture.url }}">
                     </div>
 
-                    <div class="col-6 ms-5">
+                    <div class="col-6 ms-3">
                         <a href="{% url 'books:detail' book.id %}">{{ book.title }}</a>
+                        <br>
+                        <a href="#">
+                             Muallif:
+                            {% for book_author in book.bookauthor_set.all %}
+                                {% if forloop.last %}
+                                      {{ book_author.author.full_name }}
+                                {% else %}
+                                    {{ book_author.author.full_name }},
+                                {% endif %}
+                            {% endfor %}
+                        </a>
 
+<!--                        <a href="{{ author_detail_page_url }}">-->
+<!--                             Authored by-->
+<!--                            {% for book_author in book.bookauthor_set.all %}-->
+<!--                                {% if forloop.last %}-->
+<!--                                      {{ book_author.author.full_name }}-->
+<!--                                {% else %}-->
+<!--                                    {{ book_author.author.full_name }},-->
+<!--                                {% endif %}-->
+<!--                            {% endfor %}-->
+<!--                        </a>-->
+<!--                        Stars html -->
+                        <br>
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>
+
+                        <!--  End Stars html-->
+                        <br><br>
                         <p>
                             {{ book.description }}
                         </p>
@@ -40,8 +79,8 @@
         <nav>
               <ul class="pagination">
                   {% if page_obj.has_previous %}
-                      <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
-                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+                      <li class="page-item"><a class="page-link" href="?page=1">&laquo; Birinchi</a></li>
+                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
                   {% endif %}
 
                   <li class="page-item active">
@@ -50,8 +89,8 @@
 
 
                   {% if page_obj.has_next %}
-                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
-                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last&raquo;</a></li>
+                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Oxirgi&raquo;</a></li>
                   {% endif %}
               </ul>
         </nav>
@@ -68,5 +107,9 @@
     {% else %}
         No books found.
     {% endif %}
+
+
+
+
 {% endblock %}
 

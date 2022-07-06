@@ -1,12 +1,381 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Landing Page</h1>
-    <p>
-    Goodreads
-    Википедия
-Интернет-портал так называемой «социальной каталогизации». Сайт предоставляет свободный доступ к обширной базе данных книг, аннотаций, различных обзоров. Каждый пользователь может свободно зарегистрироваться сам, зарегистрировать книги, которые будут включены в библиотечный каталог и в перечень рекомендуемой литературы. У зарегистрированных пользователей есть возможность создания своих групп по интересам, обращаясь к Книге предложений и обсуждений. На протяжении года с момента создания сайта были добавлены более десяти миллионов книг и сайт посетили более 650 000 человек.
-    </p>
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:700|Roboto:400,400i,700&display=swap" rel="stylesheet">
+    <!-- FontAwesome JS-->
+    <script defer src="static/assets/fontawesome/js/all.min.js"></script>
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="static/assets/css/theme.css">
+</head>
+<br><br>
+<body>
+    <section class="hero-section" style="top: -35px">
+	    <div class="container">
+		    <div class="row">
+			    <div class="col-12 col-md-7 pt-5 mb-5 align-self-center">
+				    <div class="promo pe-md-3 pe-lg-5">
+					    <h1 class="headline mb-3">
+						     Istalgan Vaqtda, <br>&emsp;Istalgan Joyda
+					    </h1><!--//headline-->
+					    <div class="subheadline mb-4">
+                            Ketma-ket hamma narsani o’qish shart emas, qalbdagi savollarga javob bera oladigan narsalarni o’qish kerak.&emsp;Lev Tolstoy         </div><!--//subheading-->
+
+					    <div class="cta-holder row gx-md-3 gy-3 gy-md-0">
+						    <div class="col-12 col-md-auto">
+						        <a class="btn btn-primary w-100" href="{% url 'shopping_page' %}">Qaynoq Chegirmalar 20%</a>
+						    </div>
+						    <div class="col-12 col-md-auto">
+						        <a class="btn btn-secondary scrollto w-100" href="#benefits-section">To'liq ma'lumot</a>
+						    </div>
+					    </div><!--//cta-holder-->
+
+					    <div class="hero-quotes mt-5">
+						    <div id="quotes-carousel" class="quotes-carousel carousel slide carousel-fade mb-5" data-bs-ride="carousel" data-bs-interval="8000">
+								<ol class="carousel-indicators">
+									<li data-bs-target="#quotes-carousel" data-bs-slide-to="0" class="active"></li>
+									<li data-bs-target="#quotes-carousel" data-bs-slide-to="1"></li>
+									<li data-bs-target="#quotes-carousel" data-bs-slide-to="2"></li>
+								</ol>
+
+							    <div class="carousel-inner">
+								    <div class="carousel-item active">
+								        <blockquote class="quote p-4 theme-bg-light">
+                                            Kelajak ta'limga bog'liq. Gadgetlarga cho'kib ketishni, balki ularning ko'zlarini ochadigan va uni arzimas narsalarni chiroyli qilish uchun ular orasida juda muvozanatni to'g'ri muvozanatlash kerak. Uzoqqa bormang: qiziqarli kitob oling va siz qiziqarli narsani tushunasiz!
+                                        </blockquote><!--//item-->
+								        <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
+									        <div class="col-12 col-md-auto text-center text-md-start">
+									            <img class="source-profile" src="static/assets/images/profiles/profile-1.png" alt="image" >
+									        </div><!--//col-->
+									        <div class="col source-info text-center text-md-start">
+										        <div class="source-name">Ulug'bek</div>
+										        <div class="soure-title">Dasturchi, Company Soft Startup</div>
+										    </div><!--//col-->
+								        </div><!--//source-->
+								    </div><!--//carousel-item-->
+								    <div class="carousel-item">
+								        <blockquote class="quote p-4 theme-bg-light">
+									       Kitoblar Biz unutishdan qo'rqadigan narsalarni saqlash uchun keng qamrovli narsalardan biri. Ularda biron bir sehr yo'q. Sehr faqat ular olamning loskutkalarini qanday qilib bir butunda kesib o'tishlarida », deydilar.    </blockquote><!--//item-->
+								        <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
+									        <div class="col-12 col-md-auto text-center text-md-start">
+									            <img class="source-profile" src="static/assets/images/profiles/profile-2.png" alt="image" >
+									        </div><!--//col-->
+									        <div class="col source-info text-center text-md-start">
+										        <div class="source-name">Muxlisa</div>
+										        <div class="soure-title">Talaba, WIUT University</div>
+										    </div><!--//col-->
+								        </div><!--//source-->
+								    </div><!--//carousel-item-->
+								    <div class="carousel-item">
+								        <blockquote class="quote p-4 theme-bg-light">
+									      Filmlarni tomosha qilayotganda xayolot rivojlanmaydi - bu faqat maxsus effektlar bilan cheklangan. Kitoblar xayolotni mashq qiling, miyamizni yanada plastik qiladi. Bizda o'qish haqidagi iqtiboslar sizga bir oz kitob ochish istagini beradi.  </blockquote><!--//item-->
+								        <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
+									        <div class="col-12 col-md-auto text-center text-md-start">
+									            <img class="source-profile" src="static/assets/images/profiles/profile-3.png" alt="image" >
+									        </div><!--//col-->
+									        <div class="col source-info text-center text-md-start">
+										        <div class="source-name">Otabek</div>
+										        <div class="soure-title">Frontend Developer, Company EPAM</div>
+										    </div><!--//col-->
+								        </div><!--//source-->
+								    </div><!--//carousel-item-->
+								</div><!--//carousel-inner-->
+							</div><!--//quotes-carousel-->
+
+					    </div><!--//hero-quotes-->
+				    </div><!--//promo-->
+			    </div><!--col-->
+			    <div class="col-12 col-md-4 mb-5 align-self-center">
+				    <div class="book-cover-holder mt-7">
+					    <img class="img-fluid book-cover" src="static/assets/images/devbook-cover.jpg" alt="book cover" >
+<!--					    <div class="book-badge d-inline-block shadow mt-1">-->
+<!--						    New<br>Release-->
+<!--					    </div>-->
+				    </div><!--//book-cover-holder-->
+				    <div class="text-center"><a class="theme-link scrollto" href="#reviews-section">O'quvchilar fikrlari</a></div>
+			    </div><!--col-->
+		    </div><!--//row-->
+	    </div><!--//container-->
+    </section><!--//hero-section-->
+
+    <section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
+	    <div class="container py-5">
+		    <h2 class="section-heading text-center mb-3">NIMA UCHUN AYNAN BIZ?</h2>
+		    <div class="section-intro single-col-max mx-auto text-center mb-5">Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit consequat consequat. Orci varius natoque penatibus et magnis. </div>
+		    <div class="row text-center">
+			    <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner p-3 p-lg-4">
+					    <div class="item-header mb-3">
+						    <div class="item-icon"><i class="fab fa-searchengin"></i></div>
+						    <h3 class="item-heading">Uydan chiqmasdan istalgan kitobni topish</h3>
+					    </div><!--//item-heading-->
+					    <div class="item-desc">
+						    List one of your book's benefits here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit consequat consequat.
+					    </div><!--//item-desc-->
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner p-3 p-lg-4">
+					    <div class="item-header mb-3">
+						    <div class="item-icon"><i class="fas fa-comments"></i></div>
+						    <h3 class="item-heading">Do'stlar davrasida ajoyib muhokama</h3>
+					    </div><!--//item-heading-->
+					    <div class="item-desc">
+						    List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes.
+					    </div><!--//item-desc-->
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner p-3 p-lg-4">
+					    <div class="item-header mb-3">
+						    <div class="item-icon"><i class="fas fa-shipping-fast"></i></div>
+						    <h3 class="item-heading">Istalgan kitobni buyurtma berish va tezkor yetkazib berish</h3>
+					    </div><!--//item-heading-->
+					    <div class="item-desc">
+						    List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes.
+					    </div><!--//item-desc-->
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner p-3 p-lg-4">
+					    <div class="item-header mb-3">
+						    <div class="item-icon"><i class="fas fa-graduation-cap"></i></div>
+						    <h3 class="item-heading">Xalqaro tanlovlarda qatnashish</h3>
+					    </div><!--//item-heading-->
+					    <div class="item-desc">
+						    List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes.
+					    </div><!--//item-desc-->
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner p-3 p-lg-4">
+					    <div class="item-header mb-3">
+						    <div class="item-icon"><i class="fas fa-blind"></i></div>
+						    <h3 class="item-heading">Imkoniyati cheklanganlar uchun audio kitoblar</h3>
+					    </div><!--//item-heading-->
+					    <div class="item-desc">
+						    List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes.
+					    </div><!--//item-desc-->
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner p-3 p-lg-4">
+					    <div class="item-header mb-3">
+						    <div class="item-icon"><i class="fas fa-chart-line"></i></div>
+						    <h3 class="item-heading">Biz bilan usish oson</h3>
+					    </div><!--//item-heading-->
+					    <div class="item-desc">
+						    List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes.
+					    </div><!--//item-desc-->
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+		    </div><!--//row-->
+	    </div><!--//container-->
+    </section><!--//benefits-section-->
+
+    <section id="content-section" class="content-section">
+	    <div class="container">
+		    <div class="single-col-max mx-auto">
+		    <h2 class="section-heading text-center mb-5">Siz uchun qulayliklar</h2>
+			    <div class="row">
+				    <div class="col-12 col-md-6">
+					    <div class="figure-holder mb-5">
+						    <img class="img-fluid" src="static/assets/images/devbook-devices.jpg" alt="image" >
+					    </div><!--//figure-holder-->
+				    </div><!--//col-->
+				    <div class="col-12 col-md-6 mb-5">
+					    <div class="key-points mb-4 text-center">
+						    <ul class="key-points-list list-unstyled mb-4 mx-auto d-inline-block text-start">
+							    <li><i class="fas fa-check-circle me-2"></i>List your book's content here.</li>
+							    <li><i class="fas fa-check-circle me-2"></i>PDF fermentum tincidunt erat.</li>
+							    <li><i class="fas fa-check-circle me-2"></i>EPUB curabitur fermentum.</li>
+							    <li><i class="fas fa-check-circle me-2"></i>Lorem ipsum dolor sit amet.</li>
+							    <li><i class="fas fa-check-circle me-2"></i>Praesent molestie odio risus. </li>
+							    <li><i class="fas fa-check-circle me-2"></i>Kindle curabitur fermentum.</li>
+						    </ul>
+						    <div class="text-center"><a class="btn btn-primary" href="{{ books_page_url }}">Batafsil</a></div>
+					    </div><!--//key-points-->
+
+				    </div><!--//col-12-->
+			    </div><!--//row-->
+		    </div><!--//single-col-max-->
+	    </div><!--//container-->
+    </section><!--//content-section-->
+
+    <section id="audience-section" class="audience-section py-5">
+	    <div class="container">
+		    <h2 class="section-heading text-center mb-4">Bizning kutubxona kimlar uchun</h2>
+		    <div class="section-intro single-col-max mx-auto text-center mb-5">
+			    List your target readers in this section and back up with reviews. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie. Vivamus hendrerit nisi condimentum erat tempus, vitae accumsan odio euismod.
+		    </div><!--//section-intro-->
+		    <div class="audience mx-auto">
+			    <div class="item row gx-3">
+				    <div class="col-auto item-icon"><i class="fas fa-user-check"></i></div>
+				    <div class="col">
+					    <h4 class="item-title">Yosh kitobxonlar</h4>
+					    <div class="item-desc">Learn lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie.</div>
+				    </div><!--//col-->
+			    </div><!--//item-->
+			    <div class="item row gx-3">
+				    <div class="col-auto item-icon"><i class="fas fa-user-check"></i></div>
+				    <div class="col">
+					    <h4 class="item-title">Talaba o'quvchilar</h4>
+					    <div class="item-desc">Learn lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie.</div>
+				    </div><!--//col-->
+			    </div><!--//item-->
+			    <div class="item row gx-3">
+				    <div class="col-auto item-icon"><i class="fas fa-user-check"></i></div>
+				    <div class="col">
+					    <h4 class="item-title">O'qitivchilar</h4>
+					    <div class="item-desc">Learn lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie.</div>
+				    </div><!--//col-->
+			    </div><!--//item-->
+			    <div class="item row gx-3">
+				    <div class="col-auto item-icon"><i class="fas fa-user-check"></i></div>
+				    <div class="col">
+					    <h4 class="item-title">Qiziquvchilar</h4>
+					    <div class="item-desc">Learn lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie.</div>
+				    </div><!--//col-->
+			    </div><!--//item-->
+		    </div><!--//audience-->
+	    </div><!--//container-->
+    </section><!--//audience-section-->
+
+    <section id="form-section" class="form-section">
+	    <div class="container">
+		    <div class="lead-form-wrapper single-col-max mx-auto theme-bg-light rounded p-5">
+			    <h2 class="form-heading text-center">Bepul ko'rib chiqish</h2>
+			    <div class="form-intro text-center mb-3">Kitoblarni bepul ko'rish uchun ro'yxatdan o'ting <br>You can offer visitors free book previews to generate leads.</div>
+			    <div class="form-wrapper mx-auto">
+					<form class="signup-form row g-2 align-items-center">
+						<div class="col-12 col-lg-9">
+							<label class="sr-only" for="semail">Email</label>
+							<input type="email" id="semail" name="semail1" class="form-control me-md-1 semail" placeholder="Email manzilingiz">
+						</div>
+
+						<div class="col-12 col-lg-3">
+							<button type="submit" class="btn btn-primary btn-submit w-100">Jo'natish</button>
+						</div>
+	                </form><!--//signup-form-->
+			    </div><!--//form-wrapper-->
+		    </div><!--//lead-form-wrapper-->
+	    </div><!--//container-->
+    </section><!--//form-section-->
+
+    <section id="reviews-section" class="reviews-section py-5">
+	    <div class="container">
+		    <h2 class="section-heading text-center">Foydalanuvchilar fikrlari</h2>
+		    <div class="section-intro text-center single-col-max mx-auto mb-5">O'quvchilarimiz nima deyishayotganiga qarang</div>
+		    <div class="row justify-content-center">
+			    <div class="item col-12 col-lg-4 p-3 mb-4">
+				    <div class="item-inner theme-bg-light rounded p-4">
+
+					    <blockquote class="quote">
+					        "Kitob inson ongining eng buyuk ixtirolaridan biridir - hayotimiz tajribasini boyitadi. Shaxsning baxti shundaki, unga kitob bilan do'st bo'lish."
+                        </blockquote><!--//item-->
+				        <div class="source row gx-md-3 gy-3 gy-md-0">
+					        <div class="col-12 col-md-auto text-center text-md-start">
+					            <img class="source-profile" src="static/assets/images/profiles/profile-1.png" alt="image" >
+					        </div><!--//col-->
+					        <div class="col source-info text-center text-md-start">
+						        <div class="source-name">Ulug'bek</div>
+						        <div class="soure-title">Dasturchi, Company Soft Startup  </div>
+						    </div><!--//col-->
+				        </div><!--//source-->
+				        <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
+				    </div><!--//inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-lg-4 p-3 mb-4">
+				    <div class="item-inner theme-bg-light rounded p-4">
+					    <blockquote class="quote">
+					       "Kitobni seving, u siz uchun hayotni osonlashtiradi, fikrlar, his-tuyg'ular, voqealar chalkashligini aniqlashga yordam beradi, u sizga insonni hurmat qiladi va aqlni uyg'otadi."
+				        </blockquote><!--//item-->
+				        <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
+					        <div class="col-12 col-md-auto text-center text-md-start">
+					            <img class="source-profile" src="static/assets/images/profiles/profile-2.png" alt="image" >
+					        </div><!--//col-->
+					        <div class="col source-info text-center text-md-start">
+						        <div class="source-name">Muxlisa</div>
+						        <div class="soure-title">Talaba, WIUT University </div>
+						    </div><!--//col-->
+				        </div><!--//source-->
+
+				         <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
+				    </div><!--//inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-lg-4 p-3 mb-4">
+				    <div class="item-inner theme-bg-light rounded p-4">
+					    <blockquote class="quote">
+					        "Siz qidirayotgan narsalaringiz, dunyoda bordir, lekin oddiy odam, agar yuz va yuzinchi yuzinchi yuzdan bir yuzinchi ko'zlari bilan qolgan to'qson to'qqiz foizi kitob orqali biladi."
+                        </blockquote><!--//item-->
+				        <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
+					        <div class="col-12 col-md-auto text-center text-md-start">
+					            <img class="source-profile" src="static/assets/images/profiles/profile-3.png" alt="image" >
+					        </div><!--//col-->
+					        <div class="col source-info text-center text-md-start">
+						        <div class="source-name">Otabek</div>
+						        <div class="soure-title">Frontend Developer, EPAM</div>
+						    </div><!--//col-->
+				        </div><!--//source-->
+				         <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
+				    </div><!--//inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-lg-4 p-3 mb-4">
+				    <div class="item-inner theme-bg-light rounded p-4">
+					    <blockquote class="quote">
+					        "Insoniyatning butun hayoti kitobda doimiy ravishda joylashdi: qabilalar, odamlar, davlatlar yo'qoldi, lekin kitob qoldi." </blockquote><!--//item-->
+				        <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
+					        <div class="col-12 col-md-auto text-center text-md-start">
+					            <img class="source-profile" src="static/assets/images/profiles/profile-4.png" alt="image" >
+					        </div><!--//col-->
+					        <div class="col source-info text-center text-md-start">
+						        <div class="source-name">Anora</div>
+						        <div class="soure-title">App Developer, Super Dispatch</div>
+						    </div><!--//col-->
+				        </div><!--//source-->
+				        <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
+				    </div><!--//inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-lg-4 p-3 mb-4">
+				    <div class="item-inner theme-bg-light rounded p-4">
+					    <blockquote class="quote">
+					        "Odamlarning o'qiganlaridan juda kam eslab qolishining sababi shundaki, ular o'zlarini juda kam o'ylashadi."   </blockquote><!--//item-->
+				        <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
+					        <div class="col-12 col-md-auto text-center text-md-start">
+					            <img class="source-profile" src="static/assets/images/profiles/profile-5.png" alt="image" >
+					        </div><!--//col-->
+					        <div class="col source-info text-center text-md-start">
+						        <div class="source-name">Muhammad</div>
+						        <div class="soure-title">Co-Founder, Company Integer</div>
+						    </div><!--//col-->
+				        </div><!--//source-->
+				        <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
+				    </div><!--//inner-->
+			    </div><!--//item-->
+		    </div><!--//row-->
+		    <div class="text-center">
+		        <a class="btn btn-primary" href="{{ home_page_url }}">Barchasi</a>
+		    </div>
+	    </div><!--//container-->
+    </section><!--//reviews-section-->
+
+
+
+    <!-- Javascript -->
+    <script src="static/assets/plugins/popper.min.js"></script>
+    <script src="static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/assets/plugins/smoothscroll.min.js"></script>
+    <script src="static/assets/js/main.js"></script>
+
+</body>
 
 {% endblock %}
-

@@ -1,5 +1,7 @@
 from django.urls import path
-from books.views import BooksView, BookDetailView, AddReviewView, EditReviewView, ConfirmDeleteReviewView, DeleteReviewView
+from books.views import BooksView, BookDetailView, AddReviewView, EditReviewView, ConfirmDeleteReviewView, \
+    DeleteReviewView
+from goodreads.views import shopping_page
 
 app_name = "books"
 urlpatterns = [
@@ -17,6 +19,9 @@ urlpatterns = [
          DeleteReviewView.as_view(),
         name="delete-review"
     ),
+
+
+
 
 ]
 
