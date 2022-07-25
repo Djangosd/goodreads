@@ -1,7 +1,8 @@
 python==3.8.10
 amqp==5.1.0
 asgiref==3.5.0
-backports.zoneinfo==0.2.1;python_version<"3.9"
+backports.zoneinfo==0.2.1
+python_version<"3.9"
 billiard==3.6.4.0
 celery==5.2.3
 click==8.0.4
